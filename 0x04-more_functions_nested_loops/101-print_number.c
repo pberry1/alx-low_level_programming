@@ -1,29 +1,22 @@
-#include<stdio.h>
+#include "main.h"
+
 /**
- * main - prints first 50 fibonacci numbers
+ * print_number - prints an integer
+ * @n: input integer parameter
  * Return: void
  */
-void main(void)
+void print_number(int n)
 {
-	long int a = 0;
-	long int b = 1;
-	long int c = 1;
-	int counter = 1;
+	unsigned int i = n;
 
-	a = b;
-	b = c;
-	c = a + b;
-
-	printf ("%ld\n", b);
-	printf ("%ld\n", c);
-	counter++;
-
-	while (counter < 50)
+	if (n < 0)
 	{
-		counter++;
-		a = b;
-		b = c;
-		c = a + b;
-		printf ("%ld\n", c);
+		_putchar(45);
+		i = -i;
 	}
+	if (i / 10)
+	{
+		print_number(i / 10);
+	}
+	_putchar(i % 10 + '0');
 }
